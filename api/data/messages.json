@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "sourceUserId": 0,
+    "destinationUserId": 1,
+    "date": 0,
+    "object": "message from 0 to 1",
+    "content": "hello"
+  },
+  {
+    "id": 1,
+    "sourceUserId": 1,
+    "destinationUserId": 0,
+    "date": 1,
+    "object": "message from 1 to 0",
+    "content": "goodbye"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": 0,
+    "userId": 0,
+    "date": 0,
+    "activity": "",
+    "reactions": { "likes": { "userIds": [] } }
+  }
+]
