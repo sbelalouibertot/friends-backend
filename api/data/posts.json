@@ -8,6 +8,7 @@
             "likes": {
                 "userIds": [
                     1,
+                    2,
                     0
                 ]
             }
@@ -22,8 +23,7 @@
             "likes": {
                 "userIds": [
                     2,
-                    0,
-                    1
+                    0
                 ]
             }
         }
@@ -35,7 +35,10 @@
         "activity": "MOVIE",
         "reactions": {
             "likes": {
-                "userIds": []
+                "userIds": [
+                    0,
+                    1
+                ]
             }
         }
     },
@@ -62,6 +65,65 @@
                 "userIds": [
                     1,
                     0
+                ]
+            }
+        }
+    },
+    {
+        "id": 5,
+        "userId": 0,
+        "date": "2021-04-09T18:05:53.547Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 6,
+        "userId": 0,
+        "date": "2021-04-09T18:07:14.160Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 7,
+        "userId": 0,
+        "date": "2021-04-09T18:07:34.052Z",
+        "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 8,
+        "userId": 1,
+        "date": "2021-04-09T18:08:24.647Z",
+        "activity": "CLEANUP",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 9,
+        "userId": 2,
+        "date": "2021-04-09T18:17:41.125Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    1
                 ]
             }
         }
