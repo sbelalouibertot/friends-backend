@@ -1,9 +1,69 @@
 [
-  {
-    "id": 0,
-    "userId": 0,
-    "date": 0,
-    "activity": "",
-    "reactions": { "likes": { "userIds": [] } }
-  }
+    {
+        "id": 0,
+        "userId": 0,
+        "date": 0,
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    1,
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 1,
+        "userId": 2,
+        "date": 0,
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2,
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    {
+        "id": 2,
+        "userId": 0,
+        "date": 0,
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 3,
+        "userId": 1,
+        "date": 0,
+        "activity": "COOK",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "id": 4,
+        "userId": 2,
+        "date": 0,
+        "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    1,
+                    0
+                ]
+            }
+        }
+    }
 ]

@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors';
 import {router as usersRouter} from './api/routes/users.js'
-import {router as postsRouter} from './api/routes/posts.js'
+import {router as feedRouter} from './api/routes/feed.js'
 
 const app = express();
 
@@ -29,6 +29,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/users", usersRouter);
-app.use("/posts", postsRouter);
+app.use("/feed", feedRouter);
 
 export default app
