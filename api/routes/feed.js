@@ -10,13 +10,15 @@ const router = express.Router();
 router.get("/all", (req, res, next) => {
   const posts = loadData("posts");
   const users = loadData("users");
-  const feed = posts.map((post) => ({
-    ...{
-      userName: users.find((user) => user.id === post.userId)?.firstName,
-      avatar: users.find((user) => user.id === post.userId)?.profileImg,
-    },
-    ...post,
-  })).sort((a, b) => b.id - a.id);
+  const feed = posts
+    .map((post) => ({
+      ...{
+        userName: users.find((user) => user.id === post.userId)?.firstName,
+        avatar: users.find((user) => user.id === post.userId)?.profileImg,
+      },
+      ...post,
+    }))
+    .sort((a, b) => b.id - a.id);
   res.status(200).send(feed);
 });
 
@@ -26,6 +28,7 @@ router.get("/all", (req, res, next) => {
  * postId -> id of the post to like
  * sourceUserId -> id of the user that is reacting
  * -> add (or toggle) a like reaction to a post
+ * update user notifications and
  * returns the updated feed
  */
 router.post("/like", (req, res, next) => {
@@ -41,13 +44,27 @@ router.post("/like", (req, res, next) => {
   writeData("posts", posts);
 
   const users = loadData("users");
-  const feed = posts.map((post) => ({
-    ...{
-      userName: users.find((user) => user.id === post.userId)?.firstName,
-      avatar: users.find((user) => user.id === post.userId)?.profileImg,
-    },
-    ...post,
-  })).sort((a, b) => b.id - a.id);
+  const feed = posts
+    .map((post) => ({
+      ...{
+        userName: users.find((user) => user.id === post.userId)?.firstName,
+        avatar: users.find((user) => user.id === post.userId)?.profileImg,
+      },
+      ...post,
+    }))
+    .sort((a, b) => b.id - a.id);
+
+  const notifications = loadData("notifications");
+  notifications.push({
+    id: notifications.length,
+    userId: posts.find((post) => post.id === postId)?.userId,
+    postId: postId,
+    senderId: sourceUserId,
+    date: new Date(),
+    type: "LIKE",
+    postId: postId,
+  });
+  writeData("notifications", notifications);
 
   res.status(200).send(feed);
 });
@@ -79,13 +96,15 @@ router.post("/add", (req, res, next) => {
   writeData("posts", posts);
 
   const users = loadData("users");
-  const feed = posts.map((post) => ({
-    ...{
-      userName: users.find((user) => user.id === post.userId)?.firstName,
-      avatar: users.find((user) => user.id === post.userId)?.profileImg,
-    },
-    ...post,
-  })).sort((a, b) => b.id - a.id);
+  const feed = posts
+    .map((post) => ({
+      ...{
+        userName: users.find((user) => user.id === post.userId)?.firstName,
+        avatar: users.find((user) => user.id === post.userId)?.profileImg,
+      },
+      ...post,
+    }))
+    .sort((a, b) => b.id - a.id);
 
   res.status(200).send(feed);
 });

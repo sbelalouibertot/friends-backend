@@ -98,7 +98,9 @@
         "activity": "MUSIC_INSTRUMENT",
         "reactions": {
             "likes": {
-                "userIds": []
+                "userIds": [
+                    2
+                ]
             }
         }
     },
@@ -110,7 +112,8 @@
         "reactions": {
             "likes": {
                 "userIds": [
-                    0
+                    0,
+                    2
                 ]
             }
         }
@@ -123,7 +126,22 @@
         "reactions": {
             "likes": {
                 "userIds": [
-                    1
+                    1,
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 10,
+        "userId": 1,
+        "date": "2021-04-10T05:15:39.861Z",
+        "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0,
+                    2
                 ]
             }
         }

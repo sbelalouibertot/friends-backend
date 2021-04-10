@@ -1,5 +1,5 @@
 import express from "express";
-import { loadData } from "../utils/utils.js";
+import { loadData, writeData } from "../utils/utils.js";
 
 const router = express.Router();
 
@@ -74,5 +74,21 @@ router.get("/:id/messages/sent", (req, res, next) => {
   res.status(200).send(userMessages);
 });
 
+/**
+ * GET http://localhost:3001/users/1/notifications
+ * -> get new notifications of user with id = 1, then remove the notification item.
+ */
+router.get("/:id/notifications", (req, res, next) => {
+  const notifications = loadData("notifications");
+  const userId = parseInt(req.params.id);
+  const userNotifications = notifications.filter(
+    (notification) => notification.userId === userId
+  );
+  writeData(
+    "notifications",
+    notifications.filter((notification) => notification.userId !== userId)
+  );
+  res.status(200).send(userNotifications);
+});
 
 export { router };

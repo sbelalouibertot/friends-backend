@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "postId": 3,
+        "senderId": 0,
+        "date": "2021-04-10T08:01:42.350Z",
+        "type": "LIKE"
+    }
+]
