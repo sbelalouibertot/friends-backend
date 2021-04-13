@@ -99,7 +99,8 @@
         "reactions": {
             "likes": {
                 "userIds": [
-                    2
+                    2,
+                    0
                 ]
             }
         }
@@ -143,6 +144,117 @@
                     0,
                     2
                 ]
+            }
+        }
+    },
+    {
+        "id": 11,
+        "userId": 1,
+        "date": "2021-04-10T11:54:50.343Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2,
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 12,
+        "userId": 0,
+        "date": "2021-04-10T13:50:47.900Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 13,
+        "userId": 0,
+        "date": "2021-04-10T14:00:41.987Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 14,
+        "userId": 0,
+        "date": "2021-04-10T14:16:08.959Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "id": 15,
+        "userId": 2,
+        "date": "2021-04-10T14:16:14.100Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 16,
+        "userId": 0,
+        "date": "2021-04-10T14:17:13.446Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    1,
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 17,
+        "userId": 0,
+        "date": "2021-04-10T14:34:53.167Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 18,
+        "userId": 0,
+        "date": "2021-04-10T15:07:59.820Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 19,
+        "userId": 0,
+        "date": "2021-04-10T15:24:46.994Z",
+        "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": []
             }
         }
     }

@@ -21,5 +21,8 @@
     "url": "https://github.com/sbelalouibertot/friends-backend/issues"
   },
   "homepage": "https://github.com/sbelalouibertot/friends-backend#readme",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "express-swagger-generator": "^1.1.17"
+  }
 }

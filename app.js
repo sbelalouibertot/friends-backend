@@ -2,8 +2,11 @@ import express from "express";
 import cors from 'cors';
 import {router as usersRouter} from './api/routes/users.js'
 import {router as feedRouter} from './api/routes/feed.js'
+import expressSwaggerGenerator from 'express-swagger-generator'
+import {swaggerOptions} from './swaggerOptions.json'
 
 const app = express();
+expressSwaggerGenerator(app)(swaggerOptions)
 
 app.use(express.json({limit: '50mb' }));
 app.use(express.urlencoded({ extended: true}));
