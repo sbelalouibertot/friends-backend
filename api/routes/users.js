@@ -3,9 +3,15 @@ import { loadData, writeData } from "../utils/utils.js";
 
 const router = express.Router();
 
+
 /**
- * GET http://localhost:3001/users/all
- * -> get all users
+ * @swagger 
+ * /users/all:
+ *  get:
+ *    description: Get all users
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/all", (req, res, next) => {
   const users = loadData("users");
@@ -13,8 +19,13 @@ router.get("/all", (req, res, next) => {
 });
 
 /**
- * GET http://localhost:3001/users/1
- * -> get user with id = 1
+ * @swagger 
+ * /users/1:
+ *  get:
+ *    description: Get user with id = 1
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id", (req, res, next) => {
   const users = loadData("users");
@@ -23,9 +34,15 @@ router.get("/:id", (req, res, next) => {
   res.status(200).send(user);
 });
 
+
 /**
- * GET http://localhost:3001/users/1/photos
- * -> get photos of user with id = 1
+ * @swagger 
+ * /users/1/photos:
+ *  get:
+ *    description: Get photos of user with id = 1
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id/photos", (req, res, next) => {
   const photos = loadData("photos");
@@ -35,8 +52,13 @@ router.get("/:id/photos", (req, res, next) => {
 });
 
 /**
- * GET http://localhost:3001/users/1/messages
- * -> get messages of user with id = 1
+ * @swagger 
+ * /users/1/messages:
+ *  get:
+ *    description: Get messages of user with id = 1
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id/messages", (req, res, next) => {
   const messages = loadData("messages");
@@ -48,9 +70,15 @@ router.get("/:id/messages", (req, res, next) => {
   res.status(200).send(userMessages);
 });
 
+
 /**
- * GET http://localhost:3001/users/1/messages/incoming
- * -> get incoming messages of user with id = 1
+ * @swagger 
+ * /users/1/messages/incoming:
+ *  get:
+ *    description: Get incoming messages of user with id = 1
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id/messages/incoming", (req, res, next) => {
   const messages = loadData("messages");
@@ -62,8 +90,13 @@ router.get("/:id/messages/incoming", (req, res, next) => {
 });
 
 /**
- * GET http://localhost:3001/users/1/messages/sent
- * -> get sent messages of user with id = 1
+ * @swagger 
+ * /users/1/messages/sent:
+ *  get:
+ *    description: Get sent messages of user with id = 1
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id/messages/sent", (req, res, next) => {
   const messages = loadData("messages");
@@ -75,8 +108,13 @@ router.get("/:id/messages/sent", (req, res, next) => {
 });
 
 /**
- * GET http://localhost:3001/users/1/notifications
- * -> get new notifications of user with id = 1, then remove the notification item.
+ * @swagger 
+ * /users/1/notifications:
+ *  get:
+ *    description: Get new notifications of user with id = 1, then remove the notification item.
+ *    responses:
+ *      '200': 
+ *        description: A successfull response
  */
 router.get("/:id/notifications", (req, res, next) => {
   const notifications = loadData("notifications");

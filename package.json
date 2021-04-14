@@ -15,7 +15,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   },
   "bugs": {
     "url": "https://github.com/sbelalouibertot/friends-backend/issues"
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/sbelalouibertot/friends-backend#readme",
   "type": "module",
   "devDependencies": {
-    "express-swagger-generator": "^1.1.17"
+    "swagger-jsdoc": "6.0.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }

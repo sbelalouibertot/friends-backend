@@ -4,8 +4,14 @@ import { loadData, writeData } from "../utils/utils.js";
 const router = express.Router();
 
 /**
- * GET http://localhost:3001/feed/all
- * -> get feed
+ * @swagger
+ * /feed/all:
+ *  get:
+ *    description: Use to get all feed
+ *    responses:
+ *      '200':
+ *        description: A successfull response
+ * @example GET http://localhost:3001/feed/all -> get feed
  */
 router.get("/all", (req, res, next) => {
   const posts = loadData("posts");
@@ -22,6 +28,7 @@ router.get("/all", (req, res, next) => {
   res.status(200).send(feed);
 });
 
+//TODO : Swagger for post requests
 /**
  * POST http://localhost:3001/feed/like
  * Request body :
@@ -70,11 +77,13 @@ router.post("/like", (req, res, next) => {
 });
 
 /**
- * POST http://localhost:3001/feed/add
- * Request body :
- * activity -> key of activity. e.g: RESTAURANT
- * sourceUserId -> id of the user that is adding a new post
- * returns the updated feed
+ * This function comment is parsed by doctrine
+ * @route GET /api
+ * @group foo - Operations about user
+ * @param {string} email.query.required - username or email - eg: user@domain
+ * @param {string} password.query.required - user's password.
+ * @returns {object} 200 - An array of user info
+ * @returns {Error}  default - Unexpected error
  */
 router.post("/add", (req, res, next) => {
   const posts = loadData("posts");
