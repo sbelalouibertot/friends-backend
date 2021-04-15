@@ -18,6 +18,9 @@ Everyone will see the updates and will be able to to add a "like" reaction to po
 I choosed to use the express library to create easily APIs and expose it to a NodeJS server. All of them are documentated using the "express-jsdoc-swagger" library standart, which make them accessible from a swagger.
 You can access it locally, after launching the server, at url http://localhost:3001/api-docs.
 
+![Capture d’écran 2021-04-15 à 20 13 26](https://user-images.githubusercontent.com/79903008/114918161-0d5c5480-9e27-11eb-92c0-cae7533a08de.png)
+
+
 I splited the APIs into 2 categories : 
 - users, where you can load specific information of a profile
 - feed, where you can interact with other people
