@@ -3,15 +3,11 @@ import { loadData, writeData } from "../utils/utils.js";
 
 const router = express.Router();
 
-
 /**
- * @swagger 
- * /users/all:
- *  get:
- *    description: Get all users
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/all
+ * @tags users
+ * @summary Get all users
+ * @return {object} 200 - Success response
  */
 router.get("/all", (req, res, next) => {
   const users = loadData("users");
@@ -19,13 +15,11 @@ router.get("/all", (req, res, next) => {
 });
 
 /**
- * @swagger 
- * /users/1:
- *  get:
- *    description: Get user with id = 1
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}
+ * @tags users
+ * @summary Get user with id = x
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id", (req, res, next) => {
   const users = loadData("users");
@@ -34,15 +28,12 @@ router.get("/:id", (req, res, next) => {
   res.status(200).send(user);
 });
 
-
 /**
- * @swagger 
- * /users/1/photos:
- *  get:
- *    description: Get photos of user with id = 1
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}/photos
+ * @tags users
+ * @summary Get photos of user with id = x
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id/photos", (req, res, next) => {
   const photos = loadData("photos");
@@ -52,13 +43,11 @@ router.get("/:id/photos", (req, res, next) => {
 });
 
 /**
- * @swagger 
- * /users/1/messages:
- *  get:
- *    description: Get messages of user with id = 1
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}/messages
+ * @tags users
+ * @summary Get messages of user with id = x
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id/messages", (req, res, next) => {
   const messages = loadData("messages");
@@ -70,15 +59,12 @@ router.get("/:id/messages", (req, res, next) => {
   res.status(200).send(userMessages);
 });
 
-
 /**
- * @swagger 
- * /users/1/messages/incoming:
- *  get:
- *    description: Get incoming messages of user with id = 1
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}/messages/incoming
+ * @tags users
+ * @summary Get incoming messages of user with id = x
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id/messages/incoming", (req, res, next) => {
   const messages = loadData("messages");
@@ -90,13 +76,11 @@ router.get("/:id/messages/incoming", (req, res, next) => {
 });
 
 /**
- * @swagger 
- * /users/1/messages/sent:
- *  get:
- *    description: Get sent messages of user with id = 1
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}/messages/sent
+ * @tags users
+ * @summary Get sent messages of user with id = 1
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id/messages/sent", (req, res, next) => {
   const messages = loadData("messages");
@@ -108,13 +92,11 @@ router.get("/:id/messages/sent", (req, res, next) => {
 });
 
 /**
- * @swagger 
- * /users/1/notifications:
- *  get:
- *    description: Get new notifications of user with id = 1, then remove the notification item.
- *    responses:
- *      '200': 
- *        description: A successfull response
+ * GET /users/{id}/notifications
+ * @tags users
+ * @summary Get new notifications of user with id = x, then remove the notification item.
+ * @param {number} id.path.required User ID (e.g : 1)
+ * @return {object} 200 - Success response
  */
 router.get("/:id/notifications", (req, res, next) => {
   const notifications = loadData("notifications");

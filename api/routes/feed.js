@@ -4,14 +4,10 @@ import { loadData, writeData } from "../utils/utils.js";
 const router = express.Router();
 
 /**
- * @swagger
- * /feed/all:
- *  get:
- *    description: Use to get all feed
- *    responses:
- *      '200':
- *        description: A successfull response
- * @example GET http://localhost:3001/feed/all -> get feed
+ * GET /feed/all
+ * @tags feed
+ * @summary Use to get all feed
+ * @return {object} 200 - Success response
  */
 router.get("/all", (req, res, next) => {
   const posts = loadData("posts");
@@ -28,15 +24,17 @@ router.get("/all", (req, res, next) => {
   res.status(200).send(feed);
 });
 
-//TODO : Swagger for post requests
 /**
- * POST http://localhost:3001/feed/like
- * Request body :
- * postId -> id of the post to like
- * sourceUserId -> id of the user that is reacting
- * -> add (or toggle) a like reaction to a post
- * update user notifications and
- * returns the updated feed
+ * Like object
+ * @typedef {object} LikeObject
+ * @property {number} postId.required - id of the post to like
+ * @property {number} sourceUserId.required - id of the user that is reacting
+ */
+/**
+ * POST /feed/like
+ * @summary add (or toggle) a like reaction to a post. update user notifications and returns the updated feed
+ * @param {LikeObject} request.body.required - like info - application/json
+ * @return {object} 200 - Success response (the updated feed)
  */
 router.post("/like", (req, res, next) => {
   const posts = loadData("posts");
@@ -77,13 +75,16 @@ router.post("/like", (req, res, next) => {
 });
 
 /**
- * This function comment is parsed by doctrine
- * @route GET /api
- * @group foo - Operations about user
- * @param {string} email.query.required - username or email - eg: user@domain
- * @param {string} password.query.required - user's password.
- * @returns {object} 200 - An array of user info
- * @returns {Error}  default - Unexpected error
+ * New post info
+ * @typedef {object} FeedAddObject
+ * @property {string} activity.required - activity key (e.g "RESTAURANT")
+ * @property {number} sourceUserId.required - id of the user that is adding a new post
+ */
+/**
+ * POST /feed/add
+ * @summary add a new post to the feed and returns the updated feed
+ * @param {FeedAddObject} request.body.required - new post info info - application/json
+ * @return {object} 200 - Success response (the updated feed)
  */
 router.post("/add", (req, res, next) => {
   const posts = loadData("posts");

@@ -2,32 +2,12 @@ import express from "express";
 import cors from "cors";
 import { router as usersRouter } from "./api/routes/users.js";
 import { router as feedRouter } from "./api/routes/feed.js";
-import swaggerJsDoc from "swagger-jsdoc";
-import swaggerUi from "swagger-ui-express";
+import expressJSDocSwagger from "express-jsdoc-swagger";
+import path from "path";
 
 const port = 3001;
-
-const swaggerOptions = {
-  swaggerDefinition: {
-    info: {
-      title: "Friends-backend",
-      version: "1.0.0",
-      description: "Swagger of friends apis",
-      contact: {
-        name: "Samy Belaloui-Bertot",
-      },
-      servers: [`https://localhost:${port}`],
-    },
-  },
-  apis: ["./api/routes/*.js"],
-};
 const app = express();
 
-app.use(
-  "/api-docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerJsDoc(swaggerOptions))
-);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
@@ -51,6 +31,16 @@ app.use((req, res, next) => {
   }
 });
 app.use(cors());
+expressJSDocSwagger(app)({
+  info: {
+    version: "1.0.0",
+    title: "Friends-backend",
+    description: "Swagger of friends apis",
+  },
+  filesPattern: "./api/routes/*.js",
+  swaggerUIPath: "/api-docs",
+  baseDir: path.resolve(),
+});
 
 app.use("/users", usersRouter);
 app.use("/feed", feedRouter);
