@@ -78,7 +78,7 @@ router.get("/:id/messages/incoming", (req, res, next) => {
 /**
  * GET /users/{id}/messages/sent
  * @tags users
- * @summary Get sent messages of user with id = 1
+ * @summary Get sent messages of user with id = x
  * @param {number} id.path.required User ID (e.g : 1)
  * @return {object} 200 - Success response
  */

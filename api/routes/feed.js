@@ -33,6 +33,7 @@ router.get("/all", (req, res, next) => {
 /**
  * POST /feed/like
  * @summary add (or toggle) a like reaction to a post. update user notifications and returns the updated feed
+ * @tags feed
  * @param {LikeObject} request.body.required - like info - application/json
  * @return {object} 200 - Success response (the updated feed)
  */
@@ -83,6 +84,7 @@ router.post("/like", (req, res, next) => {
 /**
  * POST /feed/add
  * @summary add a new post to the feed and returns the updated feed
+ * @tags feed
  * @param {FeedAddObject} request.body.required - new post info info - application/json
  * @return {object} 200 - Success response (the updated feed)
  */
