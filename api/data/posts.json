@@ -207,7 +207,9 @@
         "activity": "MOVIE",
         "reactions": {
             "likes": {
-                "userIds": []
+                "userIds": [
+                    0
+                ]
             }
         }
     },
@@ -252,6 +254,163 @@
         "userId": 0,
         "date": "2021-04-10T15:24:46.994Z",
         "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    1
+                ]
+            }
+        }
+    },
+    {
+        "id": 20,
+        "userId": 2,
+        "date": "2021-04-21T20:09:20.490Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 21,
+        "userId": 1,
+        "date": "2021-04-21T21:00:18.301Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 22,
+        "userId": 1,
+        "date": "2021-04-21T21:00:22.363Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 23,
+        "userId": 0,
+        "date": "2021-04-21T21:16:56.690Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "id": 24,
+        "userId": 0,
+        "date": "2021-04-21T22:21:22.680Z",
+        "activity": "RESTAURANT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "id": 25,
+        "userId": 1,
+        "date": "2021-04-24T09:41:45.518Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "id": 26,
+        "userId": 0,
+        "date": "2021-04-24T10:17:06.300Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 27,
+        "userId": 0,
+        "date": "2021-04-24T10:17:13.353Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 28,
+        "userId": 1,
+        "date": "2021-04-24T10:30:25.776Z",
+        "activity": "SPORT",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 29,
+        "userId": 1,
+        "date": "2021-04-24T11:57:53.948Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 30,
+        "userId": 1,
+        "date": "2021-04-24T11:59:07.845Z",
+        "activity": "MOVIE",
+        "reactions": {
+            "likes": {
+                "userIds": []
+            }
+        }
+    },
+    {
+        "id": 31,
+        "userId": 2,
+        "date": "2021-04-24T11:59:26.729Z",
+        "activity": "MUSIC_INSTRUMENT",
+        "reactions": {
+            "likes": {
+                "userIds": [
+                    0
+                ]
+            }
+        }
+    },
+    {
+        "id": 32,
+        "userId": 0,
+        "date": "2021-04-24T18:41:23.246Z",
+        "activity": "SPORT",
         "reactions": {
             "likes": {
                 "userIds": []
