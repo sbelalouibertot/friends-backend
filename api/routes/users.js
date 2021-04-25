@@ -100,6 +100,9 @@ router.get("/:id/messages/sent", (req, res, next) => {
  */
 router.get("/:id/notifications", (req, res, next) => {
   const notifications = loadData("notifications");
+  const users = loadData("users");
+  const posts = loadData("posts");
+
   const userId = parseInt(req.params.id);
   const userNotifications = notifications.filter(
     (notification) => notification.userId === userId
@@ -108,7 +111,14 @@ router.get("/:id/notifications", (req, res, next) => {
     "notifications",
     notifications.filter((notification) => notification.userId !== userId)
   );
-  res.status(200).send(userNotifications);
+
+  res.status(200).send(
+    userNotifications.map((notification) => ({
+      ...notification,
+      userFirstName: users.find((user) => user.id === notification.senderId).firstName,
+      activity: posts.find((post) => post.id === notification.postId).activity,
+    }))
+  );
 });
 
 export { router };

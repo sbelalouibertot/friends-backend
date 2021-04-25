@@ -35,3 +35,7 @@ Data is stored in local json files - I choosed not to use a database to make it 
 ## Let's get started 🚀
 ### `npm install`
 ### `node server.js`
+
+## Useful tools
+- Insomnia (an optimized postman-like software)
+- Nodemon (to catch changes and reload server automatically)
