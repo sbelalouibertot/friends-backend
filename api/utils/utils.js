@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs";
+const { readFileSync, writeFileSync } = require("fs");
 
 /**
  * Read content of json file
@@ -15,4 +15,5 @@ const loadData = (file) =>
 const writeData = (file, data) =>
   writeFileSync(`api/data/${file}.json`, JSON.stringify(data, null, 4));
 
-export { loadData, writeData };
+module.exports.loadData = loadData
+module.exports.writeData = writeData

@@ -1,5 +1,5 @@
-import http from "http";
-import {app, port} from "./app.js";
+const http = require("http");
+const { app, port } = require("./app.js");
 
 const server = http.createServer(app);
 server.listen(port);

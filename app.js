@@ -1,9 +1,7 @@
-import express from "express";
-import cors from "cors";
-import { router as usersRouter } from "./api/routes/users.js";
-import { router as feedRouter } from "./api/routes/feed.js";
-import expressJSDocSwagger from "express-jsdoc-swagger";
-import path from "path";
+const express = require("express");
+const cors = require("cors");
+const expressJSDocSwagger = require("express-jsdoc-swagger");
+const path = require("path");
 
 const port = 3001;
 const app = express();
@@ -42,7 +40,8 @@ expressJSDocSwagger(app)({
   baseDir: path.resolve(),
 });
 
-app.use("/users", usersRouter);
-app.use("/feed", feedRouter);
+app.use("/users", require('./api/routes/users'));
+app.use("/feed", require('./api/routes/feed'));
 
-export { app, port };
+module.exports.app = app;
+module.exports.port = port;

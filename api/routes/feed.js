@@ -1,5 +1,5 @@
-import express from "express";
-import { loadData, writeData } from "../utils/utils.js";
+const express = require( "express");
+const { loadData, writeData } = require( "../utils/utils.js");
 
 const router = express.Router();
 
@@ -121,4 +121,4 @@ router.post("/add", (req, res, next) => {
   res.status(200).send(feed);
 });
 
-export { router };
+module.exports = router
