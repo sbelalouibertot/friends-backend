@@ -64,6 +64,23 @@ describe("Users", () => {
     expect(photo).toHaveProperty("uploadedDate");
     expect(photo).toHaveProperty("ownerId");
   });
+
+  test("GET /users/0/photos", async () => {
+    const userId = 0
+    const response = await supertest(app).get(`/users/${userId}/photos`);
+    expect(response.status).toBe(200);
+
+    const photos = response.body;
+    expect(Array.isArray(photos)).toBeTruthy()
+
+    const photo = photos[0]
+    expect(photo).toHaveProperty("id");
+    expect(photo.id).toBe(0)
+    expect(photo).toHaveProperty("title");
+    expect(photo).toHaveProperty("source");
+    expect(photo).toHaveProperty("uploadedDate");
+    expect(photo).toHaveProperty("ownerId");
+  });
   
   test("GET /users/0/photos", async () => {
     const userId = 0
@@ -76,6 +93,7 @@ describe("Users", () => {
     const photo = photos[0]
     expect(photo).toHaveProperty("id");
     expect(photo.id).toBe(0)
+    expect(photo).toHaveProperty("title");
     expect(photo).toHaveProperty("source");
     expect(photo).toHaveProperty("uploadedDate");
     expect(photo).toHaveProperty("ownerId");
